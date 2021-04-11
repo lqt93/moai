@@ -19,7 +19,7 @@ interface Props {
 	close?: () => void;
 }
 
-const Close = (props: Props): JSX.Element | null => {
+const Close = (props: Props) => {
 	const close = props.close;
 	if (close === undefined) return null;
 	return (
@@ -39,7 +39,7 @@ const Close = (props: Props): JSX.Element | null => {
 	);
 };
 
-export const ToastPane = (props: Props): JSX.Element => (
+export const ToastPane = (props: Props) => (
 	<div className="dark">
 		<div
 			className={[s.container, shadow.boxStrong, border.radius].join(" ")}

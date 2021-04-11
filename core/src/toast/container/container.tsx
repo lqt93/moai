@@ -10,11 +10,11 @@ const getType = (from: RHT.ToastType): ToastPaneType => {
 	throw Error(`Unknown type: "${from}"`);
 };
 
-export const ToastContainer = (): JSX.Element => {
+export const ToastContainer = () => {
 	const { toasts, handlers } = useRHTToaster();
 	const { startPause, endPause, calculateOffset, updateHeight } = handlers;
 
-	const renderToast = (toast: RHT.Toast): JSX.Element => {
+	const renderToast = (toast: RHT.Toast) => {
 		const offsetOpts = { reverseOrder: false, margin: 8 };
 		const offset = calculateOffset(toast.id, offsetOpts);
 		const ref = (el: HTMLDivElement) => {
